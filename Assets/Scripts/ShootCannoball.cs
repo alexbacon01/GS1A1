@@ -37,6 +37,7 @@ public class ShootCannoball : MonoBehaviour
         {
             collision.gameObject.GetComponent<Health>().changeAmount = damageAmount;
             collision.gameObject.GetComponent<Health>().collision = true;
+            Destroy(gameObject);
         }
     }
 }
