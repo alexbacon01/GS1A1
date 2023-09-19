@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 198289108978901425}
-  forceAmount: 1
+  forceAmount: 5
   destroyOnCollision: 1
   damageAmount: -10
   objectHit: {fileID: 8245041192905623039, guid: 3d37526824872cf429af650abf943683, type: 3}
