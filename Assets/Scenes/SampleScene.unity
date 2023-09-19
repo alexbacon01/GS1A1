@@ -1405,6 +1405,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3198300071912804597, guid: d5cb1d5275ccb34469ba552c58af2ae8, type: 3}
   m_PrefabInstance: {fileID: 7814482012043822082}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3955320946230056021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3955320946230056020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f4269a49fde5a43a5fbcc8638fa158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  collision: 0
+  changeAmount: 0
 --- !u!1001 &7814482012043822082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1497,10 +1512,21 @@ PrefabInstance:
       propertyPath: torque
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7901593056260829320, guid: d5cb1d5275ccb34469ba552c58af2ae8, type: 3}
+      propertyPath: damageAmount
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901593056260829320, guid: d5cb1d5275ccb34469ba552c58af2ae8, type: 3}
+      propertyPath: destroyOnCollision
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3198300071912804597, guid: d5cb1d5275ccb34469ba552c58af2ae8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3955320946230056021}
   m_SourcePrefab: {fileID: 100100000, guid: d5cb1d5275ccb34469ba552c58af2ae8, type: 3}
 --- !u!1001 &8598749847758406143
 PrefabInstance:

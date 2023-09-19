@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,8 @@ public class ObjectCollision : MonoBehaviour
 
     public bool destroyOnCollision = true;
     public GameObject objectToDestroy;
-
+    public float damageAmount = -10f;
+    public Boolean hasHit = false; //boolean to keep track if the collison has already occured
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -23,7 +25,9 @@ public class ObjectCollision : MonoBehaviour
         }
         if (destroyOnCollision)
         {
-            Destroy(objectToDestroy);
+            gameObject.GetComponent<Health>().changeAmount = damageAmount;
+            gameObject.GetComponent<Health>().collision = true;
+
         }
 
     }
