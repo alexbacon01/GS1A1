@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3167597286678600779}
   - component: {fileID: 198289108978901425}
   - component: {fileID: -4503262510274219992}
-  - component: {fileID: -5409930802561571988}
   m_Layer: 3
   m_Name: Cannonball
   m_TagString: Untagged
@@ -165,17 +164,5 @@ MonoBehaviour:
   rb: {fileID: 198289108978901425}
   forceAmount: 1
   destroyOnCollision: 1
---- !u!114 &-5409930802561571988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7501734219417732945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e28056078ad36d48b40f847e6aa8d7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyOnCollision: 1
-  objectToDestroy: {fileID: 0}
+  damageAmount: -10
+  objectHit: {fileID: 8245041192905623039, guid: 3d37526824872cf429af650abf943683, type: 3}

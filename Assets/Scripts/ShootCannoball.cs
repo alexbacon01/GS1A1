@@ -8,6 +8,8 @@ public class ShootCannoball : MonoBehaviour
     public Rigidbody2D rb;
     public float forceAmount = 1f;
     public bool destroyOnCollision = true;
+    public float damageAmount = -10;
+    public GameObject objectHit;
 
     void Start()
     {
@@ -27,14 +29,14 @@ public class ShootCannoball : MonoBehaviour
     void moveCannonball()
     {
         rb.AddForce(transform.up * forceAmount, ForceMode2D.Impulse);
-        Debug.Log("fired");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (destroyOnCollision)
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<Health>().changeAmount = damageAmount;
+            collision.gameObject.GetComponent<Health>().collision = true;
         }
     }
 }

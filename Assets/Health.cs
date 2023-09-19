@@ -20,6 +20,8 @@ public class Health : MonoBehaviour
     {
         changeHealth();
         destroyObject();
+        Debug.Log(currentHealth);
+        Debug.Log(changeAmount);
     }
 
     public void changeHealth()
@@ -27,7 +29,7 @@ public class Health : MonoBehaviour
         if (collision)
         {
             currentHealth += changeAmount;
-            Debug.Log(currentHealth);
+           
             collision = false;
         }
     }

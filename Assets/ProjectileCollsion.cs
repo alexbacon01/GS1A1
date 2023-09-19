@@ -2,10 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
-public class ObjectCollision : MonoBehaviour
-    
+public class ProjectileCollsion : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -19,7 +17,11 @@ public class ObjectCollision : MonoBehaviour
         if (collision.gameObject.name.Contains("Wall"))
         {
             destroyOnCollision = false;
-        } 
+        }
+        else
+        {
+            destroyOnCollision = true;
+        }
         if (destroyOnCollision)
         {
             objectToDestroy.GetComponent<Health>().changeAmount = damageAmount;
