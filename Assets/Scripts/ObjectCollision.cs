@@ -25,10 +25,9 @@ public class ObjectCollision : MonoBehaviour
             objectToDestroy.GetComponent<Health>().changeAmount = damageAmount;
             objectToDestroy.GetComponent<Health>().collision = true;
         }
-        if (destroyOnCollision)
+        if (destroyOnCollision && collision.gameObject.name.Contains("Enemy"))
         {
-            collision.gameObject.name.Contains("Enemy");
-            Destroy(objectToDestroy);
+           Destroy(objectToDestroy);
         }
     }
 }

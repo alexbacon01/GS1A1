@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -9,10 +10,11 @@ public class Health : MonoBehaviour
     public float currentHealth;
     public Boolean collision = false; //check if it has collided
     public float changeAmount;
+    public Image healthBar;
 
     void Start()
     {
-        
+        healthBar.GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class Health : MonoBehaviour
         if (collision)
         {
             currentHealth += changeAmount;
+            updateHealthBar();
            
             collision = false;
         }
@@ -42,4 +45,10 @@ public class Health : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    public void updateHealthBar()
+    {
+        healthBar.fillAmount = currentHealth / 100;
+    }
+    
 }
