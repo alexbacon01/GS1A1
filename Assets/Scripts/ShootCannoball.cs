@@ -23,7 +23,10 @@ public class ShootCannoball : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        moveCannonball();
+        if(rb != null)
+        {
+            moveCannonball();
+        }
     }
 
     void moveCannonball()
@@ -33,7 +36,7 @@ public class ShootCannoball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (destroyOnCollision)
+        if (destroyOnCollision && collision.gameObject.GetComponent<Health>() != null)
         {
             collision.gameObject.GetComponent<Health>().changeAmount = damageAmount;
             collision.gameObject.GetComponent<Health>().collision = true;

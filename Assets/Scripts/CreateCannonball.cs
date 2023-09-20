@@ -9,6 +9,9 @@ public class ShootCannonball : MonoBehaviour
     public float forceAmount = 5f;
     public GameObject cannonball;
     public Transform shipPos;
+    public float currentTime = 2f;
+    public bool isTimerRunning = false;
+    public float coolDown = 2;
 
     void Start()
     {
@@ -18,16 +21,30 @@ public class ShootCannonball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        coolDownTimer();
         shipPos = GetComponent<Transform>();
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && currentTime >= coolDown)
        {
+   
             createCannonball();
+            currentTime = 0;
        }
+        
+        Debug.Log(currentTime);
     }
 
 
     void createCannonball()
     {
         Instantiate(cannonball, shipPos.position, shipPos.rotation);
+        isTimerRunning = true;
+    }
+
+    void coolDownTimer()
+    {
+        if (isTimerRunning)
+        {
+            currentTime += Time.deltaTime;
+        }
     }
 }
