@@ -29,6 +29,5 @@ public class ShootCannonball : MonoBehaviour
     void createCannonball()
     {
         Instantiate(cannonball, shipPos.position, shipPos.rotation);
-        Debug.Log(shipPos.position);
     }
 }
