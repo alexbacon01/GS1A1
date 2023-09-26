@@ -31,6 +31,7 @@ public class Health : MonoBehaviour
         if (collision)
         {
             currentHealth += changeAmount;
+
             updateHealthBar();
            
             collision = false;
