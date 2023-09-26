@@ -32,7 +32,7 @@ public class MoveToObject : MonoBehaviour
         vectorBetween = (player - npcVector).normalized; //target - player to find the vector between two spots
    
         //selfTransform.Translate(npcVector.magnitude * new Vector2(0, 1f) * Time.deltaTime * moveSpeed); 
-       npc.transform.position = Vector2.MoveTowards(npc.transform.position, playerObject.transform.position, moveSpeed * Time.deltaTime); 
+      //  npc.transform.position = Vector2.MoveTowards(npc.transform.position, playerObject.transform.position, moveSpeed * Time.deltaTime); 
   
         RotateTowardsPlayer(); //rotate the object 
     }
