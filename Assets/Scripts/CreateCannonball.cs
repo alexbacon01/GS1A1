@@ -36,7 +36,8 @@ public class ShootCannonball : MonoBehaviour
 
     void createCannonball()
     {
-        Instantiate(cannonball, shipPos.position, shipPos.rotation);
+        Vector2 cannonballPos = new Vector2((shipPos.position.x + 5), shipPos.position.y);
+        Instantiate(cannonball, cannonballPos, shipPos.rotation);
         isTimerRunning = true;
     }
 
