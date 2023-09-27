@@ -9,6 +9,7 @@ public class shootProjectile : MonoBehaviour
     public Rigidbody2D rb; //the rigid body of projectile
     public float forceAmount = 1f; //force amount
     public GameObject target; //game object for target
+    public float damage = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,6 @@ public class shootProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red; //when it collides with object change colour to red 
-        Debug.Log(collision.gameObject.name); //what did it hit??
+        collision.gameObject.GetComponent<Health>().changeAmount = damage;
     }
 }
