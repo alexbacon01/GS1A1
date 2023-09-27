@@ -31,7 +31,7 @@ public class shootProjectile : MonoBehaviour
     //function to move the projectile
     void MoveProjectile()
     {
-        rb.AddForce(transform.up * forceAmount, ForceMode2D.Impulse); //add force with impulse to shoot it instantly
+        rb.AddForce(target.transform.position * forceAmount, ForceMode2D.Impulse); //add force with impulse to shoot it instantly
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

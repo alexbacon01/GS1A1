@@ -14,7 +14,7 @@ public class CreateEnemyProjectile : MonoBehaviour
     bool isTimerRunning = false; //publically accessible boolean for if timer is running
     public float coolDown = 3f; //the cooldown time amount
     public float abilityRadius = 3f; //the radius for abilities
-    float destroyTime = .8f; //public so that it can be changed from unity
+    float destroyTime = 1f; //public so that it can be changed from unity
 
     void Start()
     {
