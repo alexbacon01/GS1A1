@@ -29,7 +29,6 @@ public class CreateEnemyProjectile : MonoBehaviour
         Vector3 targetPos = target.GetComponent<Transform>().position; //get the target pos as a Vector3
         Boolean inRadius = CheckInRadius(abilityRadius, transform.position, targetPos); //boolean for if the object is within radius
 
-        Debug.Log(inRadius); //is it in the radius??
 
         CoolDownTimer(); //start cool down timer
 
@@ -71,7 +70,6 @@ public class CreateEnemyProjectile : MonoBehaviour
     {
         if (Vector3.Distance(posA, posB) <= radius) //if the distance between pos a and b is less than radius
         {
-            Debug.Log("In ability radius!"); //its in the radius!!
             return true; //return true
         }
         return false; //if not return false

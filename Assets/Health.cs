@@ -14,6 +14,7 @@ public class Health : MonoBehaviour
     public Image healthBar;
     public float lives = 3;
     public Vector3 startPos;
+    public GameObject map;
     void Start()
     {
         healthBar.GetComponent<Image>();
@@ -26,8 +27,6 @@ public class Health : MonoBehaviour
     {
         changeHealth();
         destroyObject();
-        Debug.Log(currentHealth);
-        Debug.Log(changeAmount);
     }
 
     public void changeHealth()
@@ -47,6 +46,7 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             lives--;
+            makeMap();
             gameObject.SetActive(false);
             if (lives > 0)
             {
@@ -66,8 +66,15 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
         updateHealthBar() ;
         gameObject.SetActive(true);
-        Debug.Log("lives: " + lives);
     }
    
+    public void makeMap()
+    {
+        if (gameObject.GetComponent<Health>().lives == 0)
+        {
+            Instantiate(map);
+            Debug.Log("MAP");
+        }
+    }
 
 }

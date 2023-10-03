@@ -29,8 +29,6 @@ public class ShootCannonball : MonoBehaviour
             createCannonball();
             currentTime = 0;
        }
-        
-        Debug.Log(currentTime);
     }
 
 
