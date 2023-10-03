@@ -1591,10 +1591,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f4269a49fde5a43a5fbcc8638fa158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 20
   currentHealth: 100
   collision: 0
   changeAmount: 0
   healthBar: {fileID: 763612194}
+  lives: 1
+  startPos: {x: 0, y: 0, z: 0}
+  map: {fileID: 4337315096420505763, guid: 0984e6b2090072546b7c237522666e44, type: 3}
 --- !u!4 &2142856804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3834159413890895500, guid: 3d37526824872cf429af650abf943683, type: 3}
@@ -1731,6 +1735,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3395145239520155182, guid: d5cb1d5275ccb34469ba552c58af2ae8, type: 3}
   m_PrefabInstance: {fileID: 7814482012043822082}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3955320946230056036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3955320946230056020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c64f858744e61c459d8005ab993f4cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numOfMaps: 0
 --- !u!1001 &7814482012043822082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1795,6 +1812,14 @@ PrefabInstance:
       propertyPath: currentTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5995954492869024695, guid: d5cb1d5275ccb34469ba552c58af2ae8, type: 3}
+      propertyPath: torque
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995954492869024695, guid: d5cb1d5275ccb34469ba552c58af2ae8, type: 3}
+      propertyPath: forceAmount
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6019407232119171008, guid: d5cb1d5275ccb34469ba552c58af2ae8, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1817,7 +1842,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3395145239520155182, guid: d5cb1d5275ccb34469ba552c58af2ae8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1233638624}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3198300071912804597, guid: d5cb1d5275ccb34469ba552c58af2ae8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3955320946230056036}
   m_SourcePrefab: {fileID: 100100000, guid: d5cb1d5275ccb34469ba552c58af2ae8, type: 3}
 --- !u!1001 &8598749847758406143
 PrefabInstance:
