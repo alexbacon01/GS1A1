@@ -1951,6 +1951,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3959835665090667495, guid: 3d37526824872cf429af650abf943683, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959835665090667495, guid: 3d37526824872cf429af650abf943683, type: 3}
+      propertyPath: turnSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959835665090667495, guid: 3d37526824872cf429af650abf943683, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 3955320946230056020}
+    - target: {fileID: 3959835665090667495, guid: 3d37526824872cf429af650abf943683, type: 3}
+      propertyPath: wanderRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8245041192905623039, guid: 3d37526824872cf429af650abf943683, type: 3}
       propertyPath: m_Name
       value: Main Enemy

@@ -1,14 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Windows;
+using static UnityEngine.GraphicsBuffer;
+using Random = UnityEngine.Random; //use unity random
 
 public class EnemyMovement : MonoBehaviour
 {
     // Start is called before the first frame update
 
-
+    /*
     public Rigidbody2D rb;
     public float currentTimer = 0;
     public float maxTimer;
@@ -68,3 +71,52 @@ public class EnemyMovement : MonoBehaviour
             transform.Rotate(new Vector3(0, 0, signedAngle));
     }
 }
+    */
+
+    public float wanderRadius = 2f;
+    private float currentTimer = 0;
+    private float maxTimer;
+    private bool isMoving = false;
+    public float moveSpeed = 2f;
+    private Vector3 newPosition;
+    public float turnSpeed = 1f;
+
+    private void Start()
+    {
+        newPosition = newPos();
+    }
+
+    private void Update()
+    {
+        Move();
+    }
+
+    private void Move()
+    {
+        Rotate();
+        if (transform.position != newPosition)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, newPosition, moveSpeed *Time.deltaTime);
+  
+        } 
+        if(transform.position == newPosition)
+        {
+     
+           newPosition = newPos();
+        }
+
+    }
+
+    private Vector3 newPos()
+    {
+        return Random.insideUnitCircle * wanderRadius;
+    }
+
+    private void Rotate()
+    {
+        Vector3 target = newPosition - transform.position;
+        transform.up = Vector3.RotateTowards(transform.up, target, turnSpeed * Time.deltaTime,0);
+    }
+    }
+
+

@@ -19,8 +19,7 @@ public class CollectMap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.name.Contains("Map")) ;
+        if (collision.gameObject.name.Contains("Map")) 
         {
             numOfMaps++;
             Destroy(collision.gameObject);
