@@ -88,12 +88,12 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        Rotate();
     }
 
     private void Move()
     {
-        Rotate();
+   
         if (transform.position != newPosition)
         {
             transform.position = Vector3.MoveTowards(transform.position, newPosition, moveSpeed *Time.deltaTime);
@@ -101,7 +101,7 @@ public class EnemyMovement : MonoBehaviour
         } 
         if(transform.position == newPosition)
         {
-     
+            Debug.Log("current pos:" + transform.position + "newPos: " + newPosition);
            newPosition = newPos();
         }
 
@@ -116,6 +116,10 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector3 target = newPosition - transform.position;
         transform.up = Vector3.RotateTowards(transform.up, target, turnSpeed * Time.deltaTime,0);
+        if(transform.up == Vector3.RotateTowards(transform.up, target, turnSpeed * Time.deltaTime, 0))
+        {
+            Move();
+        }
     }
     }
 
