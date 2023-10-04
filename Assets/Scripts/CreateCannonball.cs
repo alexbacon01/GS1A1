@@ -25,7 +25,6 @@ public class ShootCannonball : MonoBehaviour
         shipPos = GetComponent<Transform>();
         if (Input.GetButtonDown("Jump") && currentTime >= coolDown)
        {
-   
             createCannonball();
             currentTime = 0;
        }

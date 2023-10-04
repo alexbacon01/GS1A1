@@ -46,7 +46,10 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             lives--;
-            makeMap();
+            if (gameObject.name.Contains("Enemy"))
+            {
+                makeMap();
+            }
             gameObject.SetActive(false);
             if (lives > 0)
             {
@@ -67,12 +70,11 @@ public class Health : MonoBehaviour
         updateHealthBar() ;
         gameObject.SetActive(true);
     }
-   
     public void makeMap()
     {
         if (gameObject.GetComponent<Health>().lives == 0)
         {
-            Instantiate(map);
+            Instantiate(map, transform.position, Quaternion.identity);
             Debug.Log("MAP");
         }
     }

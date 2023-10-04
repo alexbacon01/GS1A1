@@ -37,6 +37,11 @@ public class shootProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.gameObject.GetComponent<Health>().changeAmount = damage;
+        if(collision.gameObject.GetComponent<Health>() != null)
+        {
+            collision.gameObject.GetComponent<Health>().changeAmount = damage;
+        }
+
+        Destroy(gameObject);
     }
 }

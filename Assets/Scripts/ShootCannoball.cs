@@ -7,7 +7,6 @@ public class ShootCannoball : MonoBehaviour
     // Start is called before the first frame update
     public Rigidbody2D rb;
     public float forceAmount = 1f;
-    public bool destroyOnCollision = true;
     public float damageAmount = -10;
     public GameObject objectHit;
 
@@ -17,10 +16,6 @@ public class ShootCannoball : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void FixedUpdate()
     {
         if(rb != null)
@@ -36,11 +31,11 @@ public class ShootCannoball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (destroyOnCollision && collision.gameObject.GetComponent<Health>() != null)
+        if (collision.gameObject.GetComponent<Health>() != null)
         {
             collision.gameObject.GetComponent<Health>().changeAmount = damageAmount;
             collision.gameObject.GetComponent<Health>().collision = true;
-            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 }

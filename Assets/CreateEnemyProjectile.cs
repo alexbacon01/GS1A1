@@ -10,11 +10,11 @@ public class CreateEnemyProjectile : MonoBehaviour
     public GameObject projectile;
     public GameObject target;
 
-    float currentTime = 0f; //float for current time
-    bool isTimerRunning = false; //publically accessible boolean for if timer is running
-    public float coolDown = 3f; //the cooldown time amount
+    private float currentTime = 0f; //float for current time
+    private bool isTimerRunning = false; //publically accessible boolean for if timer is running
+    private float coolDown = 3f; //the cooldown time amount
     public float abilityRadius = 3f; //the radius for abilities
-    float destroyTime = 1f; //public so that it can be changed from unity
+    private float destroyTime = 3f; //public so that it can be changed from unity
 
     void Start()
     {
