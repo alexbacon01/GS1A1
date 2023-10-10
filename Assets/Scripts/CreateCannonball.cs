@@ -33,7 +33,7 @@ public class ShootCannonball : MonoBehaviour
 
     void createCannonball()
     {
-        Vector2 cannonballPos = new Vector2((shipPos.position.x + 5), shipPos.position.y);
+        Vector2 cannonballPos = new Vector2((shipPos.position.x), shipPos.position.y);
         Instantiate(cannonball, cannonballPos, shipPos.rotation);
         isTimerRunning = true;
     }
