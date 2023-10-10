@@ -4,24 +4,8 @@ using UnityEngine;
 
 public class StartGame : MonoBehaviour
 {
-    private bool startGame = false;
-    // Start is called before the first frame update
-    void Start()
+    public void LoadLevel()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (startGame)
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
-        }
-    }
-
-   public void LoadLevel()
-    {
-        startGame = true;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
     }
 }
