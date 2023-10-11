@@ -18,9 +18,10 @@ public class DisplayLives : MonoBehaviour
         arrayOfLives = new GameObject[startLives];
         for (int i = 0; i < arrayOfLives.Length; i++)
         {
- 
+            float spacing = i*100f;
             Debug.Log(i);
-            arrayOfLives[i] = Instantiate(heart, parent.transform);
+            Vector3 pos = new Vector3(100+ spacing, parent.transform.position.y+parent.transform.position.y - 100, parent.transform.position.z);
+            arrayOfLives[i] = Instantiate(heart,pos, parent.transform.rotation, parent.transform);
         }
 
     }
