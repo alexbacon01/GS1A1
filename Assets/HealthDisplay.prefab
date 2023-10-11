@@ -116,3 +116,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 0}
   heart: {fileID: 8972658333476959831, guid: 3c98eb5d1258d424ab8f78bec9a6078c, type: 3}
+  parent: {fileID: 8026459745172978119}
