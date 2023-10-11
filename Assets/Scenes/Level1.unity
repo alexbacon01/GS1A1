@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1777859950}
+    - target: {fileID: 2915638317137426165, guid: 3d37526824872cf429af650abf943683, type: 3}
+      propertyPath: abilityRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3834159413890895500, guid: 3d37526824872cf429af650abf943683, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.59
