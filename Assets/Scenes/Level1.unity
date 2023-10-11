@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1777859950}
+    - target: {fileID: 2915638317137426165, guid: 3d37526824872cf429af650abf943683, type: 3}
+      propertyPath: abilityRadius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3834159413890895500, guid: 3d37526824872cf429af650abf943683, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -1066,6 +1070,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8099422802389409405, guid: 8eed36b5f2437b04b9090cd3246648ea, type: 3}
   m_PrefabInstance: {fileID: 6059483855000830804}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1714808630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8026459745172978119, guid: 8eed36b5f2437b04b9090cd3246648ea, type: 3}
+  m_PrefabInstance: {fileID: 6059483855000830804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1773742837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,7 +1199,7 @@ PrefabInstance:
     - target: {fileID: 5907907666429791464, guid: 8eed36b5f2437b04b9090cd3246648ea, type: 3}
       propertyPath: parent
       value: 
-      objectReference: {fileID: 1773742837}
+      objectReference: {fileID: 1714808630}
     - target: {fileID: 5907907666429791464, guid: 8eed36b5f2437b04b9090cd3246648ea, type: 3}
       propertyPath: character
       value: 
