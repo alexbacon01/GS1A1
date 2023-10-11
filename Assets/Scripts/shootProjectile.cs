@@ -7,9 +7,12 @@ public class shootProjectile : MonoBehaviour
     // Start is called before the first frame update
 
     public Rigidbody2D rb; //the rigid body of projectile
-    public float forceAmount = 1f; //force amount
-    public GameObject target; //game object for target
+    public float forceAmount = 10f; //force amount
+    public GameObject enemy; //game object for target
+    private GameObject target;
     public float damage = 10f;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +23,7 @@ public class shootProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
     }
     private void FixedUpdate()
     {
@@ -32,7 +36,9 @@ public class shootProjectile : MonoBehaviour
     //function to move the projectile
     void MoveProjectile()
     {
-        rb.AddForce(target.transform.position * forceAmount, ForceMode2D.Impulse); //add force with impulse to shoot it instantly
+   
+        rb.AddForce(transform.up * forceAmount, ForceMode2D.Impulse); //add force with impulse to shoot it instantly
+  
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

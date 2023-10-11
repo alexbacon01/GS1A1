@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 7814890078193450689, guid: a7f35c44bf6ebba44b27d62fb1b41786, type: 3}
-  target: {fileID: 0}
+  target: {fileID: 3198300071912804597, guid: d5cb1d5275ccb34469ba552c58af2ae8, type: 3}
   abilityRadius: 20
 --- !u!114 &7523875888609824519
 MonoBehaviour:

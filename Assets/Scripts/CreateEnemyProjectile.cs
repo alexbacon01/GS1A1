@@ -15,6 +15,7 @@ public class CreateEnemyProjectile : MonoBehaviour
     private float coolDown = 3f; //the cooldown time amount
     public float abilityRadius = 3f; //the radius for abilities
     private float destroyTime = 3f; //public so that it can be changed from unity
+    public Vector3 targetPos;
 
     void Start()
     {
@@ -24,12 +25,13 @@ public class CreateEnemyProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        targetPos = target.GetComponent<Transform>().position;
         //set the local variables
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>(); //get spriteRenderer to change colour while player is within radius
-        Vector3 targetPos = target.GetComponent<Transform>().position; //get the target pos as a Vector3
+        //get the target pos as a Vector3
         Boolean inRadius = CheckInRadius(abilityRadius, transform.position, targetPos); //boolean for if the object is within radius
 
-
+        Debug.DrawRay(transform.position, targetPos);
         CoolDownTimer(); //start cool down timer
 
         if (currentTime >= coolDown && inRadius) //if the current time is less than cooldown and it's within radius
@@ -53,6 +55,7 @@ public class CreateEnemyProjectile : MonoBehaviour
     GameObject Create(Vector3 targetPos)
     {
         isTimerRunning = true; //set timer running to true
+        Debug.Log("target pos=" + targetPos);
         return Instantiate(projectile, transform.position, AimProjectile(targetPos)); //create and return the new game object 
     }
 
@@ -78,7 +81,8 @@ public class CreateEnemyProjectile : MonoBehaviour
     //a function to find the rotation the projectile should be shot from. Returns a Quaternion and takes a Vector3 as a parameter of the target position
     Quaternion AimProjectile(Vector3 targetPos)
     {
-        Vector2 vectorBetween = (targetPos - transform.position).normalized; //target - player to find the vector between two spots and normalize it
+        Vector2 vectorBetween = (transform.position - targetPos); //target - player to find the vector between two spots and normalize it
+        
         Vector2 up = transform.up; //short hand for (0,1) direction
 
         float signedAngle = Vector2.SignedAngle(up, vectorBetween); //angle between forward and the player
