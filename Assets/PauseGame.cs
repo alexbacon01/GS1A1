@@ -18,13 +18,14 @@ public class PauseGame : MonoBehaviour
     void Update()
     {
         Pause();
- 
+
         if (paused)
         {
             screen.SetActive(true);
             level.SetActive(false);
             hDisplay.SetActive(false);
-        } else
+        }
+        else
         {
             screen.SetActive(false);
             level.SetActive(true);
