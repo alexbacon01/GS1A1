@@ -6,6 +6,7 @@ using UnityEngine;
 public class CreateEnemyProjectile : MonoBehaviour
 
 {
+
     //refernces to the game objects for target and projectile
     public GameObject projectile;
     public GameObject target;
@@ -16,6 +17,7 @@ public class CreateEnemyProjectile : MonoBehaviour
     public float abilityRadius = 3f; //the radius for abilities
     private float destroyTime = 3f; //public so that it can be changed from unity
     public Vector3 targetPos;
+    public Transform targetTransform;
 
     void Start()
     {
@@ -25,7 +27,8 @@ public class CreateEnemyProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        targetPos = target.GetComponent<Transform>().position;
+        targetPos = target.transform.position;
+        Debug.Log("target pos=" + targetPos);
         //set the local variables
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>(); //get spriteRenderer to change colour while player is within radius
         //get the target pos as a Vector3
@@ -55,7 +58,6 @@ public class CreateEnemyProjectile : MonoBehaviour
     GameObject Create(Vector3 targetPos)
     {
         isTimerRunning = true; //set timer running to true
-        Debug.Log("target pos=" + targetPos);
         return Instantiate(projectile, transform.position, AimProjectile(targetPos)); //create and return the new game object 
     }
 
@@ -81,11 +83,11 @@ public class CreateEnemyProjectile : MonoBehaviour
     //a function to find the rotation the projectile should be shot from. Returns a Quaternion and takes a Vector3 as a parameter of the target position
     Quaternion AimProjectile(Vector3 targetPos)
     {
-        Vector2 vectorBetween = (transform.position - targetPos); //target - player to find the vector between two spots and normalize it
+        Vector2 vectorBetween = (transform.position - targetPos).normalized; //target - player to find the vector between two spots and normalize it
         
         Vector2 up = transform.up; //short hand for (0,1) direction
 
-        float signedAngle = Vector2.SignedAngle(up, vectorBetween); //angle between forward and the player
+        float signedAngle = Vector2.SignedAngle(targetPos, vectorBetween); //angle between forward and the player
         Quaternion rotation = Quaternion.Euler(0, 0, signedAngle); //adds the roation but has to be done in a Vector3 to add the rotation angle
         return rotation;
     }

@@ -136,7 +136,7 @@ MonoBehaviour:
   forceAmount: 15
   selfTransform: {fileID: 3395145239520155182}
   normalizedInput: {x: 0, y: 0}
-  torque: 5
+  torque: 3
 --- !u!114 &7901593056260829320
 MonoBehaviour:
   m_ObjectHideFlags: 0
